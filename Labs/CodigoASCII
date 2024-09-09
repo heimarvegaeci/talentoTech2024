@@ -1,0 +1,14 @@
+# Programa para mostrar el código ASCII y su representación binaria de un carácter ingresado por el usuario
+
+# Solicitar al usuario que ingrese un carácter
+caracter = input("Ingrese un carácter: ")
+
+# Obtener el código ASCII del carácter
+codigo_ascii = ord(caracter)
+
+# Convertir el código ASCII a su representación binaria
+codigo_binario = bin(codigo_ascii)[2:]
+
+# Mostrar los resultados
+print(f"Código ASCII de '{caracter}': {codigo_ascii}")
+print(f"Representación binaria de {codigo_ascii}: {codigo_binario}")
