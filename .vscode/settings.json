@@ -1,0 +1,11 @@
+{
+    "python.analysis.extraPaths": [
+        "./Labs/ProgramaFactura/tests/test_",
+        "./Labs/ProgramaFactura/tests/test_"
+    ],
+    "python.testing.pytestArgs": [
+        "Labs"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
