@@ -12,8 +12,12 @@ class Empleado:
         self.horas_extras_dominicales_nocturnas = horas_extras_dominicales_nocturnas
 
     def __str__(self):
-        return (f"Empleado(cedula={self.cedula}, nombre='{self.nombre}', sueldo={self.sueldo}, "
-                f"dias={self.dias}, horas_recargo_nocturno={self.horas_recargo_nocturno}, "
-                f"horas_extras_diurnas={self.horas_extras_diurnas}, horas_extras_nocturnas={self.horas_extras_nocturnas}, "
-                f"horas_extras_dominicales_diurnas={self.horas_extras_dominicales_diurnas}, "
-                f"horas_extras_dominicales_nocturnas={self.horas_extras_dominicales_nocturnas})")
+        return (f"  Cédula: {self.cedula}\n"
+            f"  Nombre: {self.nombre}\n"
+            f"  Sueldo: {self.sueldo:.2f}\n"
+            f"  Días trabajados: {self.dias}\n"
+            f"  Horas recargo nocturno: {self.horas_recargo_nocturno}\n"
+            f"  Horas extras diurnas: {self.horas_extras_diurnas}\n"
+            f"  Horas extras nocturnas: {self.horas_extras_nocturnas}\n"
+            f"  Horas extras dominicales diurnas: {self.horas_extras_dominicales_diurnas}\n"
+            f"  Horas extras dominicales nocturnas: {self.horas_extras_dominicales_nocturnas}")

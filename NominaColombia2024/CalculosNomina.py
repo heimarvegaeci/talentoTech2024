@@ -138,9 +138,9 @@ class CalculosNomina:
         return vacaciones
     
 # Ejemplo de uso
-def mostrar_datos(empleado, calculos_nomina, salario_basico, auxilio_transporte, horas_extras, total_devengado, salud_empleado, pension_empleado, fondo_solidaridad, valor_retefuente, deducciones, salud_empresa, pension_empresa, sena, icbf, ccf, total_parafiscales, cesantias, intereses_cesantias, prima, vacaciones, total_prestaciones):
+def mostrar_datos(calculos_nomina, salario_basico, auxilio_transporte, horas_extras, total_devengado, salud_empleado, pension_empleado, fondo_solidaridad, valor_retefuente, deducciones, salud_empresa, pension_empresa, sena, icbf, ccf, total_parafiscales, cesantias, intereses_cesantias, prima, vacaciones, total_prestaciones, total_nomina):
     print("\n========= Datos del Empleado =========")
-    print(empleado)
+    print(calculos_nomina.empleado)
        
     print("\n========= Devengado =========")
     print(f"Salario Basico: {calculos_nomina.formatear_valor(salario_basico)}")
@@ -169,6 +169,8 @@ def mostrar_datos(empleado, calculos_nomina, salario_basico, auxilio_transporte,
     print(f"Prima: {calculos_nomina.formatear_valor(prima)}")
     print(f"Vacaciones: {calculos_nomina.formatear_valor(vacaciones)}")
     print(f"Total Prestaciones: {calculos_nomina.formatear_valor(total_prestaciones)}")
+
+    print(f"Total nómina: {calculos_nomina.formatear_valor(total_nomina)}")
 
 if __name__ == "__main__":
 
@@ -215,10 +217,11 @@ if __name__ == "__main__":
 
         salario_neto = total_devengado - deducciones
 
-        mostrar_datos(empleado, calculos_nomina, salario_basico, auxilio_transporte, horas_extras, total_devengado, salud_empleado, pension_empleado, fondo_solidaridad, valor_retefuente, deducciones, salud_empresa, pension_empresa, sena, icbf, ccf, total_parafiscales, cesantias, intereses_cesantias, prima, vacaciones, total_prestaciones)
-
         #Calcula el total de la nomina
         total_nomina = total_devengado + total_prestaciones + total_parafiscales
+
+        mostrar_datos(calculos_nomina, salario_basico, auxilio_transporte, horas_extras, total_devengado, salud_empleado, pension_empleado, fondo_solidaridad, valor_retefuente, deducciones, salud_empresa, pension_empresa, sena, icbf, ccf, total_parafiscales, cesantias, intereses_cesantias, prima, vacaciones, total_prestaciones, total_nomina)
+
         datos_nomina.append({
                 "Cedula": empleado.cedula,
                 "Nombre": empleado.nombre,
@@ -245,9 +248,6 @@ if __name__ == "__main__":
                 "Salario Neto": salario_neto,
                 "Total Nómina": total_devengado + total_prestaciones + total_parafiscales
             })
-        # print(f"Total nómina: {calculos_nomina.formatear_valor(total_nomina)}")
-
-        
         
     dtFrame = pd.DataFrame(datos_nomina)
     dtFrame.to_excel('Nomina.xlsx', index=False)
